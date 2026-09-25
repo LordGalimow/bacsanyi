@@ -6,15 +6,16 @@
     <title>Batsányi Mémverseny | batsanyi_memek4</title>
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --accent-gold: #fbbf24;
-            --accent-silver: #cbd5e1;
-            --accent-bronze: #d97706;
-            --primary: #8b5cf6;
-            --primary-gradient: linear-gradient(135deg, #a855f7, #6366f1);
-            --text-color: #f8fafc;
-            --text-muted: #94a3b8;
+            --bg-color: #080c14;
+            --card-bg: #131b2e;
+            --accent: #fbbf24;
+            --accent-glow: rgba(251, 191, 36, 0.25);
+            --text-main: #ffffff;
+            --text-sub: #cbd5e1;
+            --border: #23314d;
+            --badge-bg: #221c38;
+            --badge-text: #c084fc;
+            --badge-border: #4c1d95;
         }
 
         * {
@@ -23,13 +24,9 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(245, 158, 11, 0.1) 0px, transparent 50%);
-            background-attachment: fixed;
-            color: var(--text-color);
+            color: var(--text-main);
             margin: 0;
             padding: 16px 12px;
             display: flex;
@@ -43,132 +40,127 @@
 
         header {
             text-align: center;
-            padding: 20px 0 25px 0;
+            padding: 15px 0 20px 0;
         }
 
-        .badge {
-            background: rgba(139, 92, 246, 0.2);
-            border: 1px solid rgba(139, 92, 246, 0.4);
-            color: #c084fc;
-            padding: 4px 12px;
-            border-radius: 20px;
+        .tag {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            border: 1px solid var(--badge-border);
+            padding: 5px 14px;
+            border-radius: 6px;
             font-size: 0.8rem;
             font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
             display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            color: var(--text-color);
-            font-size: 2rem;
-            margin: 0 0 8px 0;
-            font-weight: 900;
-            letter-spacing: -0.5px;
-            text-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
-        }
-
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin: 0;
-            line-height: 1.4;
-        }
-
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .card:hover {
-            border-color: rgba(168, 85, 247, 0.3);
-        }
-
-        h2 {
-            font-size: 1.15rem;
-            margin-top: 0;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 800;
+            margin-bottom: 12px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        ul {
-            padding-left: 0;
-            list-style: none;
+        h1 {
+            color: var(--text-main);
+            font-size: 2.1rem;
+            margin: 0 0 8px 0;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--text-sub);
+            font-size: 1rem;
             margin: 0;
+            line-height: 1.4;
         }
 
-        li {
-            margin-bottom: 12px;
-            font-size: 0.92rem;
-            line-height: 1.5;
-            background: rgba(255, 255, 255, 0.02);
-            padding: 10px 14px;
-            border-radius: 12px;
-            border-left: 3px solid var(--primary);
+        .hero-img-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #1e293b;
+            border: 2px dashed var(--border);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 10px;
         }
 
-        li:last-child {
+        .card {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: var(--accent);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        .category-item {
+            background: #0d1322;
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .category-item:last-child {
             margin-bottom: 0;
         }
 
-        li strong {
-            color: #fff;
+        .category-title {
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 1rem;
             display: block;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
+        }
+
+        .category-desc {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 0;
         }
 
         .prizes {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .prize-box {
             padding: 14px 16px;
-            border-radius: 16px;
+            border-radius: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #0d1322;
+            border: 1px solid var(--border);
         }
 
-        .prize-box.gold {
-            background: linear-gradient(90deg, rgba(251, 191, 36, 0.15) 0%, rgba(251, 191, 36, 0.02) 100%);
-            border: 1px solid rgba(251, 191, 36, 0.3);
-        }
-
-        .prize-box.silver {
-            background: linear-gradient(90deg, rgba(203, 213, 225, 0.1) 0%, rgba(203, 213, 225, 0.02) 100%);
-            border: 1px solid rgba(203, 213, 225, 0.2);
-        }
-
-        .prize-box.bronze {
-            background: linear-gradient(90deg, rgba(217, 119, 6, 0.1) 0%, rgba(217, 119, 6, 0.02) 100%);
-            border: 1px solid rgba(217, 119, 6, 0.2);
+        .prize-box.first {
+            border-color: var(--accent);
+            background: rgba(251, 191, 36, 0.05);
         }
 
         .prize-rank {
             font-weight: 800;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-size: 1.05rem;
+            color: var(--text-main);
         }
 
         .prize-details {
@@ -176,50 +168,86 @@
         }
 
         .amount {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 900;
+            color: var(--accent);
+            display: block;
         }
 
-        .gold .amount { color: var(--accent-gold); }
-        .silver .amount { color: var(--accent-silver); }
-        .bronze .amount { color: var(--accent-bronze); }
-
         .extra {
-            font-size: 0.75rem;
-            color: var(--text-muted);
+            font-size: 0.8rem;
+            color: var(--text-sub);
             display: block;
-            margin-top: 2px;
+        }
+
+        .rules-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .rules-list li {
+            color: var(--text-sub);
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .rules-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.3rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .rules-list li strong {
+            color: var(--text-main);
+        }
+
+        .email-box {
+            background: #0d1322;
+            border: 1px dashed var(--accent);
+            color: var(--accent);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-top: 14px;
+            word-break: break-all;
         }
 
         .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: var(--primary-gradient);
-            color: #fff;
+            display: block;
+            background: var(--accent);
+            color: #000000;
             text-align: center;
             padding: 18px;
-            border-radius: 16px;
-            font-weight: 800;
+            border-radius: 12px;
+            font-weight: 900;
             text-decoration: none;
-            font-size: 1.1rem;
-            margin-top: 24px;
-            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
-            transition: all 0.2s ease;
+            font-size: 1.15rem;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px var(--accent-glow);
         }
 
         .btn:active {
-            transform: scale(0.97);
-            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+            transform: scale(0.98);
         }
 
         footer {
             text-align: center;
-            color: var(--text-muted);
+            color: var(--text-sub);
             font-size: 0.8rem;
             margin: 25px 0 10px 0;
-            opacity: 0.7;
+            opacity: 0.6;
         }
     </style>
 </head>
@@ -227,72 +255,98 @@
 
 <div class="container">
     <header>
-        <span class="badge">🔥 4. Fiók Hivatalos</span>
-        <h1>BATSÁNYI MÉMVERSENY</h1>
-        <p class="subtitle">Küldd be a legjobb mémedet és vidd el a büfékuponokat!</p>
+        <span class="tag">Batsányi Mémek 4.</span>
+        <h1>MÉMVERSENY</h1>
+        <p class="subtitle">Küldj mémet, nyerj suli büfékupont!</p>
     </header>
 
+    <!-- Ide jön a banner kép -->
+    <div class="hero-img-placeholder">
+        [ Ide jön a banner kép ]
+    </div>
+
     <div class="card">
-        <h2>🎁 Nyeremények</h2>
+        <h2>Nyeremények</h2>
         <div class="prizes">
-            <div class="prize-box gold">
-                <span class="prize-rank">🥇 1. Helyezett</span>
+            <div class="prize-box first">
+                <span class="prize-rank">1. Helyezett</span>
                 <div class="prize-details">
                     <span class="amount">2000 Ft</span>
                     <span class="extra">Büfékupon + Kitűzött poszt</span>
                 </div>
             </div>
-            <div class="prize-box silver">
-                <span class="prize-rank">🥈 2. Helyezett</span>
+            <div class="prize-box">
+                <span class="prize-rank">2. Helyezett</span>
                 <div class="prize-details">
                     <span class="amount">1000 Ft</span>
                     <span class="extra">Büfékupon + Highlight</span>
                 </div>
             </div>
-            <div class="prize-box bronze">
-                <span class="prize-rank">🥉 3. Helyezett</span>
+            <div class="prize-box">
+                <span class="prize-rank">3. Helyezett</span>
                 <div class="prize-details">
                     <span class="amount">500 Ft</span>
                     <span class="extra">Büfékupon + Megjelölés</span>
                 </div>
             </div>
         </div>
+        <p style="font-size:0.85rem; color:var(--text-sub); margin-top:12px; margin-bottom:0; text-align:center;">
+            *A nyertesek a büfékuponokat <strong>személyesen</strong> kapják meg a suliban!
+        </p>
     </div>
 
     <div class="card">
-        <h2>📌 Kategóriák</h2>
-        <ul>
-            <li>
-                <strong>👨‍🏫 Tanárok</strong>
-                Órai pillanatok, ikonikus beszólások, dolgozatok és feleltetések.
-            </li>
-            <li>
-                <strong>🏫 Diákélet</strong>
-                Puskázás, büfés sorban állás, elfelejtett házi, kómázás a 8. órán.
-            </li>
-            <li>
-                <strong>🚀 Szabadkategória</strong>
-                Bármilyen egyéb vicces mém, ami a sulis élethez kapcsolódik.
-            </li>
-        </ul>
+        <h2>Kategóriák</h2>
+        <div class="category-item">
+            <span class="category-title">Tanárok</span>
+            <p class="category-desc">Órai pillanatok, tanári aranyköpések, dolgozatok és feleltetések.</p>
+        </div>
+        <div class="category-item">
+            <span class="category-title">Diákélet</span>
+            <p class="category-desc">Puskázás, büfés sorban állás, elfelejtett házi, kómázás a 8. órán.</p>
+        </div>
+        <div class="category-item">
+            <span class="category-title">Szabadkategória</span>
+            <p class="category-desc">Bármilyen egyéb vicces mém, ami a sulis élethez kapcsolódik.</p>
+        </div>
     </div>
 
     <div class="card">
-        <h2>📜 Szabályok</h2>
-        <ul>
-            <li><strong>Saját tartalom:</strong> Csak saját készítésű mémeket fogadunk el.</li>
-            <li><strong>Fair play:</strong> Sértő vagy túlzottan személyeskedő mém automatikusan kiesik.</li>
-            <li><strong>Anonimitás:</strong> Ha anonim szeretnél maradni, jelezd a üzenetben!</li>
-            <li><strong>Szavazás:</strong> A győzteseket a követők választják ki Sztori szavazáson.</li>
-        </ul>
+        <h2>Idővonal & Szavazás</h2>
+        <div class="category-item">
+            <span class="category-title">📩 Beküldési határidő</span>
+            <p class="category-desc">Október 5. (23:59-ig)</p>
+        </div>
+        <div class="category-item">
+            <span class="category-title">🗳️ Szavazás indítása</span>
+            <p class="category-desc">Október 15. (8:00-tól) lapozós bejegyzésben és Instagram Sztori szavazáson.</p>
+        </div>
+        <div class="category-item">
+            <span class="category-title">🏆 Top 3 kiválasztása</span>
+            <p class="category-desc">A győzteseket a Sztoriban leadott szavazatok döntik el (a bejegyzés pedig megmarad emlékbe a profilon).</p>
+        </div>
     </div>
 
-    <a href="https://instagram.com/batsanyi_memek4" class="btn">
-        <span>📩 Beküldés DM-ben</span>
-    </a>
+    <div class="card">
+        <h2>Beküldés & Szabályok</h2>
+        <ul class="rules-list">
+            <li><strong>Beküldési formátum:</strong> Kizárólag kép formátumot fogadunk el (PNG, JPG, JPEG, WEBP).</li>
+            <li><strong>Hol küldheted be:</strong> Insta DM-ben (@batsanyi_memek4) vagy e-mailben.</li>
+            <li><strong>Anonimitás a verseny alatt:</strong> A mém beküldőjének kiléte a szavazás végéig <strong>teljesen titkos (anonim)</strong> marad, hogy a szavazás fair legyen!</li>
+            <li><strong>Megjelölés a végén:</strong> Beküldéskor írd meg nekünk, hogy az eredményhirdetésnél kiírhatjuk-e/megjelölhetjük-e a nevedet, vagy a győzelem esetén is anonim szeretnél maradni.</li>
+            <li><strong>Másik diák fotója:</strong> Ha egy másik diák fotóját használod a mémben, ahhoz a beleegyezése szükséges! Ha az érintett diák kéri a kép eltávolítását, a mém <strong>automatikusan kizárásra és törlésre kerül</strong>.</li>
+            <li><strong>Fair play:</strong> Túlontúl sértő vagy személyeskedő tartalom nem kerül ki.</li>
+        </ul>
+        
+        <div class="email-box">
+            batsanyimemek4@outlook.com
+        </div>
+    </div>
+
+    <a href="https://instagram.com/batsanyi_memek4" class="btn">Beküldés DM-ben</a>
 
     <footer>
-        <p>© Batsányi Mémek 4. | Minden jog fenntartva</p>
+        <p>© Batsányi Mémek 4.</p>
     </footer>
 </div>
 
