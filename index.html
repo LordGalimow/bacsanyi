@@ -9,8 +9,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://batsanyimemek4.run.place/">
     <meta property="og:title" content="Batsányi Mémek 4. — Mémverseny">
-    <meta property="og:description" content="Küldd be a mémjeidet okt. 5-ig és nyerj büfé utalványt! Szavazás zárása: okt. 8.">
-    <meta property="og:image" content="https://batsanyimemek4.run.place/banner.jpg">
+    <meta property="og:description" content="Küldd be a mémjeidet okt. 5-ig Insta DM-ben és nyerj büfé utalványt! Szavazás zárása: okt. 8.">
+    <meta property="og:image" content="https://batsanyimemek4.run.place/banner.png">
 
     <!-- Betűtípusok & Ikonok -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -281,60 +281,45 @@
         }
 
         .btn {
-            padding: 12px 22px;
-            border-radius: 12px;
+            padding: 14px 26px;
+            border-radius: 14px;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 1rem;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             cursor: pointer;
             border: none;
             transition: all 0.25s ease;
         }
 
-        .btn-copy {
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border: 1px solid var(--card-border);
-        }
-
-        .btn-copy:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-email {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-            color: #000;
-        }
-
-        .btn-email:hover {
-            transform: scale(1.03);
-            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
-        }
-
         .btn-insta {
             background: var(--insta-gradient);
             color: #fff;
-            box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+            box-shadow: 0 4px 20px rgba(220, 39, 67, 0.35);
         }
 
         .btn-insta:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 20px rgba(220, 39, 67, 0.5);
+            transform: scale(1.04);
+            box-shadow: 0 6px 25px rgba(220, 39, 67, 0.55);
+        }
+
+        .secondary-option {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.88rem;
+            color: var(--text-sub);
         }
 
         .email-display {
             font-family: monospace;
-            background: rgba(0,0,0,0.4);
-            padding: 8px 16px;
-            border-radius: 8px;
+            background: rgba(0,0,0,0.3);
+            padding: 4px 10px;
+            border-radius: 6px;
             color: var(--accent-cyan);
-            display: inline-block;
-            margin-top: 15px;
-            font-size: 1rem;
-            border: 1px dashed rgba(0, 242, 254, 0.3);
+            font-size: 0.88rem;
         }
 
         /* GYIK / FAQ Harmonika */
@@ -429,7 +414,6 @@
             .countdown { gap: 6px; }
             .time-box { min-width: 55px; }
             .time-box .num { font-size: 1.4rem; }
-            .cta-buttons { flex-direction: column; }
             .btn { width: 100%; justify-content: center; }
         }
     </style>
@@ -444,7 +428,7 @@
 
         <!-- Fejléc Banner Kép -->
         <div class="hero-banner-wrap">
-            <img src="banner.jpg" alt="Batsányi Mémek 4. Fejléc" class="hero-banner-img" onerror="this.style.display='none'">
+            <img src="banner.png" alt="Batsányi Mémek 4. Fejléc" class="hero-banner-img" onerror="this.style.display='none'">
         </div>
 
         <!-- Fejléc Szekció -->
@@ -490,7 +474,7 @@
                 <div class="timeline-icon"><i class="fa-solid fa-clock"></i></div>
                 <div class="timeline-content">
                     <strong>Beküldési Záróra: Október 5. 23:59</strong>
-                    <p>Eddig az időpontig várjuk a mémeket e-mailben. Későbbi beküldést nem tudunk elfogadni.</p>
+                    <p>Eddig az időpontig várjuk a mémeket Instagram üzenetben. Későbbi beküldést nem tudunk elfogadni.</p>
                 </div>
             </div>
             <div class="timeline-item">
@@ -509,19 +493,21 @@
             </div>
         </div>
 
-        <!-- CTA Beküldési doboz -->
+        <!-- CTA Beküldési doboz (Instagram Központú) -->
         <div class="glass-card cta-card">
-            <h3 style="font-size: 1.4rem; font-weight: 800; color: #fff;">📩 Küldd be a mémedet most!</h3>
+            <h3 style="font-size: 1.4rem; font-weight: 800; color: #fff;">📸 Küldd be a mémedet Instagramon!</h3>
             <p style="color: var(--text-sub); margin-top: 6px; font-size: 0.95rem;">
-                Csatold a képet egy e-mailben, vagy keresd fel az Instagram oldalunkat!
+                Kattints az alábbi gombra és küldd el a képet nekünk DM-ben:
             </p>
 
-            <div class="email-display" id="email-address">batsanyimemek4@outlook.com</div>
-
             <div class="cta-buttons">
-                <button class="btn btn-copy" onclick="copyEmail()"><i class="fa-regular fa-copy"></i> Cím Másolása</button>
-                <a href="mailto:batsanyimemek4@outlook.com?subject=Batsányi%20Mémverseny%20Beküldés" class="btn btn-email"><i class="fa-solid fa-paper-plane"></i> E-mail Küldése</a>
-                <a href="https://instagram.com/batsanyimemek_4" target="_blank" class="btn btn-insta"><i class="fa-brands fa-instagram"></i> @batsanyimemek_4</a>
+                <a href="https://instagram.com/batsanyimemek_4" target="_blank" class="btn btn-insta">
+                    <i class="fa-brands fa-instagram" style="font-size: 1.2rem;"></i> @batsanyimemek_4 megnyitása
+                </a>
+            </div>
+
+            <div class="secondary-option">
+                Alternatívaként e-mailben is elküldheted: <span class="email-display">batsanyimemek4@outlook.com</span>
             </div>
         </div>
 
@@ -534,16 +520,16 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    Igen! Akár több ötlettel is nevezhetsz, de a minőség mindig fontosabb a mennyiségnél.
+                    Igen! Akár több ötlettel is nevezhetsz Insta DM-ben, de a minőség mindig fontosabb a mennyiségnél.
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     Hogyan kapom meg a nyereményt, ha nyerek?
-                    <div class="faq-question-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    A szavazás lezárulta után felvesszük a kapcsolatot a nyertesekkel a beküldő e-mail címen keresztül, és átadjuk a büfé utalványokat.
+                    A szavazás lezárulta után felvesszük a kapcsolatot a nyertesekkel Instagram üzenetben, és átadjuk a büfé utalványokat.
                 </div>
             </div>
             <div class="faq-item">
@@ -579,23 +565,6 @@
         function toggleFaq(element) {
             const faqItem = element.parentElement;
             faqItem.classList.toggle('active');
-        }
-
-        // E-mail másolás
-        function copyEmail() {
-            const email = document.getElementById('email-address').innerText;
-            navigator.clipboard.writeText(email).then(() => {
-                const btnCopy = document.querySelector('.btn-copy');
-                btnCopy.innerHTML = '<i class="fa-solid fa-check"></i> Másolva!';
-                btnCopy.style.borderColor = '#00f2fe';
-                btnCopy.style.color = '#00f2fe';
-                
-                setTimeout(() => {
-                    btnCopy.innerHTML = '<i class="fa-regular fa-copy"></i> Cím Másolása';
-                    btnCopy.style.borderColor = 'var(--card-border)';
-                    btnCopy.style.color = '#fff';
-                }, 2000);
-            });
         }
 
         // Időzítő Logika
