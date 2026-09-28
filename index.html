@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Batsányi Mémek 4. — Iskolai Mémverseny</title>
+    <title>Batsányi Mémek 4.</title>
     
     <!-- Open Graph / Social Media Előnézet -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://batsanyimemek4.run.place/">
-    <meta property="og:title" content="Batsányi Mémek 4. — Iskolai Mémverseny">
-    <meta property="og:description" content="Küldd be a mémjeidet okt. 5-ig Insta DM-ben és nyerj büfé utalványt! Szavazás zárása: okt. 8.">
-    <meta property="og:image" content="banner.png">
+    <meta property="og:title" content="Batsányi Mémek 4.">
+    <meta property="og:description" content="Küldd be a mémjeidet okt. 6-ig Insta DM-ben és nyerj büfékupont! Szavazás zárása: okt. 9.">
+    <meta property="og:image" content="https://batsanyimemek4.run.place/banner.png">
 
     <!-- Betűtípusok & Ikonok -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
     <style>
         :root {
             --bg-color: #06080e;
-            --card-bg: rgba(15, 21, 37, 0.65);
+            --card-bg: rgba(15, 21, 37, 0.6);
             --card-border: rgba(255, 255, 255, 0.08);
             --accent-cyan: #00f2fe;
             --accent-blue: #4facfe;
@@ -52,13 +52,13 @@
             min-height: 100vh;
         }
 
-        /* Ambient háttérfények */
+        /* Ambient Fények */
         .ambient-glow {
             position: fixed;
             border-radius: 50%;
             filter: blur(140px);
             z-index: -1;
-            opacity: 0.28;
+            opacity: 0.25;
             pointer-events: none;
         }
 
@@ -73,51 +73,25 @@
             padding: 40px 20px 80px;
         }
 
-        /* Reszponzív, levágásmentes banner keret */
+        /* Responsive Banner Image */
         .hero-banner-wrap {
             width: 100%;
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
-            margin-bottom: 32px;
-            border: 1px solid rgba(0, 242, 254, 0.25);
-            box-shadow: 0 20px 50px -10px rgba(0, 242, 254, 0.2);
-            background: rgba(11, 16, 28, 0.8);
-            backdrop-filter: blur(12px);
+            margin-bottom: 28px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            background: rgba(15, 21, 37, 0.4);
             display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 12px;
+            align-items: center;
         }
 
         .hero-banner-img {
             width: 100%;
-            height: auto;
             max-height: 420px;
             object-fit: contain;
             display: block;
-            border-radius: 16px;
-        }
-
-        /* Fallback dizájn ha hiányozna a kép */
-        .hero-banner-fallback {
-            display: none;
-            padding: 40px 20px;
-            text-align: center;
-            width: 100%;
-            background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(127, 0, 255, 0.15));
-            border-radius: 16px;
-        }
-
-        .hero-banner-fallback i {
-            font-size: 3rem;
-            color: var(--accent-cyan);
-            margin-bottom: 12px;
-        }
-
-        .hero-banner-fallback h2 {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: #fff;
         }
 
         .header-section {
@@ -126,23 +100,23 @@
         }
 
         .logo-title {
-            font-size: clamp(2.4rem, 6vw, 3.5rem);
+            font-size: 3.2rem;
             font-weight: 900;
             background: linear-gradient(135deg, #ffffff 10%, var(--accent-cyan) 60%, var(--accent-blue) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 12px;
-            letter-spacing: -1.5px;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
         }
 
         .subtitle {
             color: var(--text-sub);
             font-size: 1.1rem;
             max-width: 600px;
-            margin: 0 auto 30px;
+            margin: 0 auto 28px;
         }
 
-        /* Visszaszámláló kártya */
+        /* Visszaszámláló */
         .timer-card {
             background: rgba(12, 17, 30, 0.7);
             backdrop-filter: blur(16px);
@@ -195,8 +169,8 @@
         /* Szekció Címek */
         .section-title {
             font-weight: 800;
-            font-size: 1.6rem;
-            margin: 50px 0 24px;
+            font-size: 1.5rem;
+            margin: 45px 0 20px;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -204,11 +178,11 @@
 
         .section-title i { color: var(--accent-cyan); }
 
-        /* Nyeremények Grid */
+        /* Nyeremények */
         .prizes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
         }
 
         .glass-card {
@@ -217,18 +191,18 @@
             border: 1px solid var(--card-border);
             border-radius: 20px;
             padding: 24px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.25s ease, border-color 0.25s ease;
         }
 
         .glass-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             border-color: rgba(0, 242, 254, 0.3);
         }
 
         .prize-card { text-align: center; }
 
         .prize-icon {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             margin-bottom: 8px;
         }
 
@@ -248,55 +222,56 @@
             font-weight: 600;
         }
 
-        /* Szabályzat & Menetrend */
-        .rules-timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        /* Egybefüggő Szabályzat Panel */
+        .single-rules-panel {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 10px 28px;
         }
 
-        .timeline-item {
+        .rule-row {
             display: flex;
             align-items: flex-start;
             gap: 16px;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 20px;
-            border-radius: 18px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .timeline-icon {
-            background: rgba(0, 242, 254, 0.1);
+        .rule-row:last-child {
+            border-bottom: none;
+        }
+
+        .rule-icon {
             color: var(--accent-cyan);
-            border: 1px solid rgba(0, 242, 254, 0.2);
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-size: 1.2rem;
+            margin-top: 3px;
+            width: 28px;
+            text-align: center;
             flex-shrink: 0;
         }
 
-        .timeline-content strong {
+        .rule-text strong {
             display: block;
             color: #fff;
             font-size: 1.05rem;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
 
-        .timeline-content p {
+        .rule-text p {
             color: var(--text-sub);
-            font-size: 0.92rem;
+            font-size: 0.93rem;
+            line-height: 1.5;
         }
 
-        /* Beküldési CTA Kártya */
+        /* CTA Beküldő Kártya */
         .cta-card {
             text-align: center;
             background: linear-gradient(180deg, rgba(20, 27, 45, 0.8) 0%, rgba(10, 14, 25, 0.9) 100%);
             border: 1px solid rgba(0, 242, 254, 0.25);
-            margin-top: 50px;
+            margin-top: 45px;
+            padding: 32px 24px;
         }
 
         .cta-buttons {
@@ -308,7 +283,7 @@
         }
 
         .btn {
-            padding: 14px 26px;
+            padding: 14px 28px;
             border-radius: 14px;
             font-weight: 700;
             font-size: 1rem;
@@ -328,7 +303,7 @@
         }
 
         .btn-insta:hover {
-            transform: scale(1.04);
+            transform: scale(1.03);
             box-shadow: 0 6px 25px rgba(220, 39, 67, 0.55);
         }
 
@@ -354,7 +329,7 @@
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 14px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             overflow: hidden;
         }
 
@@ -380,13 +355,12 @@
             padding: 0 20px;
             color: var(--text-sub);
             font-size: 0.92rem;
-            border-top: 1px solid transparent;
         }
 
         .faq-item.active .faq-answer {
             max-height: 200px;
-            padding: 14px 20px;
-            border-top-color: var(--card-border);
+            padding: 12px 20px 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .faq-item.active .faq-question i {
@@ -437,11 +411,12 @@
         }
 
         @media (max-width: 600px) {
+            .logo-title { font-size: 2.2rem; }
             .countdown { gap: 6px; }
             .time-box { min-width: 55px; }
             .time-box .num { font-size: 1.4rem; }
             .btn { width: 100%; justify-content: center; }
-            .hero-banner-wrap { padding: 6px; }
+            .single-rules-panel { padding: 5px 18px; }
         }
     </style>
 </head>
@@ -453,22 +428,18 @@
 
     <div class="app-container">
 
-        <!-- Teljes terjedelmében megjelenő banner keret -->
+        <!-- Fejléc Banner Kép -->
         <div class="hero-banner-wrap">
-            <img src="banner.png" alt="Batsányi Mémek 4. Fejléc" class="hero-banner-img" id="bannerImg" onerror="handleBannerError()">
-            <div class="hero-banner-fallback" id="bannerFallback">
-                <i class="fa-solid fa-masks-theater"></i>
-                <h2>Batsányi Mémek 4.</h2>
-            </div>
+            <img src="banner.png" alt="Batsányi Mémek 4." class="hero-banner-img" onerror="this.style.display='none'">
         </div>
 
         <!-- Fejléc Szekció -->
         <header class="header-section">
             <h1 class="logo-title">Batsányi Mémek 4.</h1>
-            <p class="subtitle">A gimnázium legmenőbb (egyetlen) mémversenye! Hozd a legviccesebb poénjaidat és zsebelj be büfé utalványokat!</p>
+            <p class="subtitle">Küldd be a legjobb poénjaidat az iskolai életről Insta DM-ben, és nyerj büfékupont!</p>
             
             <div class="timer-card">
-                <div class="timer-title" id="timer-title">Beküldési határidő:</div>
+                <div class="timer-title" id="timer-title">Beküldési határidőig hátralévő idő</div>
                 <div class="countdown">
                     <div class="time-box"><span class="num" id="days">00</span><span class="label">Nap</span></div>
                     <div class="time-box"><span class="num" id="hours">00</span><span class="label">Óra</span></div>
@@ -484,66 +455,77 @@
             <div class="glass-card prize-card gold">
                 <div class="prize-icon"><i class="fa-solid fa-crown"></i></div>
                 <div class="prize-amount">2000 Ft</div>
-                <p class="prize-place">1. Helyezett Büfé Utalvány</p>
+                <p class="prize-place">1. Helyezett Büfékupon</p>
             </div>
             <div class="glass-card prize-card silver">
                 <div class="prize-icon"><i class="fa-solid fa-medal"></i></div>
                 <div class="prize-amount">1000 Ft</div>
-                <p class="prize-place">2. Helyezett Büfé Utalvány</p>
+                <p class="prize-place">2. Helyezett Büfékupon</p>
             </div>
             <div class="glass-card prize-card bronze">
                 <div class="prize-icon"><i class="fa-solid fa-award"></i></div>
                 <div class="prize-amount">500 Ft</div>
-                <p class="prize-place">3. Helyezett Büfé Utalvány</p>
+                <p class="prize-place">3. Helyezett Büfékupon</p>
             </div>
         </div>
 
-        <!-- Menetrend & Szabályok -->
-        <h2 class="section-title"><i class="fa-solid fa-list-check"></i> Menetrend & Szabályzat</h2>
-        <div class="rules-timeline">
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fa-solid fa-clock"></i></div>
-                <div class="timeline-content">
-                    <strong>Beküldési Záróra: Október 5. 23:59</strong>
-                    <p>Eddig az időpontig várjuk a mémeket Instagram üzenetben. Későbbi beküldést nem tudunk elfogadni.</p>
+        <!-- Szabályzat egyetlen összefüggő üvegpanelben -->
+        <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i> Szabályok & Tudnivalók</h2>
+        <div class="single-rules-panel">
+            <div class="rule-row">
+                <div class="rule-icon"><i class="fa-solid fa-image"></i></div>
+                <div class="rule-text">
+                    <strong>Téma és tartalom</strong>
+                    <p>Bármilyen batsányis, diákélettel vagy tanórákkal kapcsolatos poén jöhet. A lényeg, hogy ne lépje át a jó ízlés határát, ne legyen személyeskedő vagy sértő.</p>
                 </div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fa-solid fa-check-to-slot"></i></div>
-                <div class="timeline-content">
-                    <strong>Szavazás Zárása: Október 8. 23:59</strong>
-                    <p>A beküldött mémekre az <a href="https://instagram.com/batsanyimemek_4" target="_blank" class="insta-link">@batsanyimemek_4</a> Instagram oldalon lehet szavazni.</p>
+
+            <div class="rule-row">
+                <div class="rule-icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="rule-text">
+                    <strong>Határidők</strong>
+                    <p>Beküldés: <strong>október 6. 23:59-ig</strong>.<br>
+                    Szavazás lezárása: <strong>október 9. 23:59-ig</strong> az Instagram oldalon.</p>
                 </div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fa-solid fa-user-secret"></i></div>
-                <div class="timeline-content">
-                    <strong>100% Anonimitás</strong>
-                    <p>A beküldők kiléte a szavazás végéig titkos marad, így garantáljuk a teljesen elfogulatlan szavazást.</p>
+
+            <div class="rule-row">
+                <div class="rule-icon"><i class="fa-solid fa-user-ninja"></i></div>
+                <div class="rule-text">
+                    <strong>Névtelenség</strong>
+                    <p>Minden beküldés teljesen névtelen marad. A szavazás végéig senki nem fogja tudni, ki készítette a képet.</p>
+                </div>
+            </div>
+
+            <div class="rule-row">
+                <div class="rule-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+                <div class="rule-text">
+                    <strong>Képeltávolítás</strong>
+                    <p>Ha egy mémről bárki érintett úgy érzi, hogy kellemetlen számára a megjelenés, üzenetben jelezheti, és azonnal töröljük.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Beküldő Akció Kártya (Instagram Központú) -->
+        <!-- CTA Beküldési doboz -->
         <div class="glass-card cta-card">
-            <h3 style="font-size: 1.4rem; font-weight: 800; color: #fff;">📸 Küldd be a mémedet Instagramon!</h3>
+            <h3 style="font-size: 1.4rem; font-weight: 800; color: #fff;">Küldd be a mémedet!</h3>
             <p style="color: var(--text-sub); margin-top: 6px; font-size: 0.95rem;">
-                Kattints az alábbi gombra és küldd el a képet nekünk DM-ben:
+                Dobd át nekünk közvetlenül Instagram üzenetben:
             </p>
 
             <div class="cta-buttons">
                 <a href="https://instagram.com/batsanyimemek_4" target="_blank" class="btn btn-insta">
-                    <i class="fa-brands fa-instagram" style="font-size: 1.2rem;"></i> @batsanyimemek_4 megnyitása
+                    <i class="fa-brands fa-instagram" style="font-size: 1.2rem;"></i> @batsanyimemek_4
                 </a>
             </div>
 
             <div class="secondary-option">
-                Alternatívaként e-mailben is elküldheted: <span class="email-display">batsanyimemek4@outlook.com</span>
+                E-mailben is beküldheted: <span class="email-display">batsanyimemek4@outlook.com</span>
             </div>
         </div>
 
         <!-- GYIK / FAQ -->
-        <h2 class="section-title"><i class="fa-solid fa-circle-question"></i> Gyakran Ismételt Kérdések</h2>
+        <h2 class="section-title"><i class="fa-solid fa-circle-question"></i> Gyakran ismételt kérdések</h2>
         <div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
@@ -551,37 +533,37 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    Igen! Akár több ötlettel is nevezhetsz Insta DM-ben, de a minőség mindig fontosabb a mennyiségnél.
+                    Igen, nyugodtan küldhetsz többet is DM-ben!
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    Hogyan kapom meg a nyereményt, ha nyerek?
+                    Hogyan kapom meg a kupont, ha nyerek?
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    A szavazás lezárulta után felvesszük a kapcsolatot a nyertesekkel Instagram üzenetben, és átadjuk a büfé utalványokat.
+                    A szavazás után felvesszük veled a kapcsolatot üzenetben, és odaadjuk a kinyomtatott büfékupont.
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    Mit tegyek, ha nem szeretném, hogy egy kép kint maradjon?
+                    Honnan tudom, hogy kiírásra került a mémem?
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    Személyiségi jogok védelmében, ha az érintett diák vagy tanár kéri, a képet haladéktalanul töröljük az Instagram oldalról.
+                    Folyamatosan töltjük fel a beérkezett mémeket az Instagram oldalunkra, ott tudod követni őket és begyűjteni a szavazatokat.
                 </div>
             </div>
         </div>
 
         <!-- Mémkészítő Segédlet Eszközök -->
-        <h2 class="section-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Mémkészítő Segédprogramok</h2>
+        <h2 class="section-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Mémkészítők</h2>
         <div class="tools-grid">
             <a href="https://imgflip.com/memegenerator" target="_blank" class="tool-link">
                 <i class="fa-solid fa-pen-to-square" style="color: var(--accent-cyan);"></i> Imgflip Generator
             </a>
             <a href="https://www.canva.com" target="_blank" class="tool-link">
-                <i class="fa-solid fa-palette" style="color: var(--accent-purple);"></i> Canva Szerkesztő
+                <i class="fa-solid fa-palette" style="color: var(--accent-purple);"></i> Canva
             </a>
         </div>
 
@@ -592,21 +574,15 @@
     </footer>
 
     <script>
-        // Banner Kép Fallback Kezelő
-        function handleBannerError() {
-            document.getElementById('bannerImg').style.display = 'none';
-            document.getElementById('bannerFallback').style.display = 'block';
-        }
-
         // GYIK Harmonika
         function toggleFaq(element) {
             const faqItem = element.parentElement;
             faqItem.classList.toggle('active');
         }
 
-        // Időzítő Logika (2026. október 5. és október 8.)
-        const submissionDeadline = new Date('October 5, 2026 23:59:59').getTime();
-        const votingEnd = new Date('October 8, 2026 23:59:59').getTime();
+        // Időzítő Logika (Okt. 6. és Okt. 9.)
+        const submissionDeadline = new Date('October 6, 2026 23:59:59').getTime();
+        const votingEnd = new Date('October 9, 2026 23:59:59').getTime();
 
         function updateTimer() {
             const now = new Date().getTime();
